@@ -10,9 +10,7 @@ if(file_exists($s1)){
 }
 else{
 if(file_exists($s2)){
-	$detime=(int)file_get_contents($s2);
-	$otime=(int)date('U');
-	$btime=$otime-$detime;
+	$btime=(int)date('U')-(int)file_get_contents($s2);
 	if($btime>=(24*60*60)){
 		$day=intval($btime/(24*60*60));
 		$temp=$btime%(24*60*60);
@@ -43,7 +41,7 @@ if(file_exists($s2)){
 	$message="服务器 ".$ip."(".$point.")"." 心跳恢复\n异常历时".$tmessage;
 	alerter($message);
 	unlink($s2);
-	unset($message);unset($tmessage);unset($otime);unset($detime);unset($btime);
+	unset($message);unset($tmessage);unset($btime);
 }
 a:echo 0;
  //关闭连接
