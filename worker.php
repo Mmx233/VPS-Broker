@@ -43,7 +43,7 @@ if(file_exists($s2)){
 	$message="服务器 ".$ip."(".$point.")"." 心跳恢复\n异常历时".$tmessage;
 	alerter($message);
 	unlink($s2);
-	unset($message);unset($tmessage);unset($otime);unset($detime);
+	unset($message);unset($tmessage);unset($otime);unset($detime);unset($btime);
 }
 a:echo 0;
  //关闭连接
